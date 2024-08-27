@@ -5,4 +5,4 @@ num2=$2
 
 sum=$(($num1+$num2))
 
-echo "total of num values : $sum
+echo "total of num values : $sum"
