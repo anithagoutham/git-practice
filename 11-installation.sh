@@ -2,4 +2,4 @@
 
 userid=$(id -u)
 
-echo " userid = $userid
+echo " userid = $userid "
