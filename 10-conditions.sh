@@ -1,5 +1,6 @@
 #!/bin/bash
 
+num = $n
 echo " sending a number = $num "
 
 if[ $num -gt 20 ]
