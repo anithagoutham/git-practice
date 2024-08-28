@@ -1,14 +1,14 @@
 #!/bin/bash
 
 num=$n
-echo " sending a number = $num "
+echo " sending a number = "  $num 
 
 if[ $num -gt 20 ]
- then
+then
   echo " given number is > 20 "
 
 else
-then
+
  echo " given number is < 20 "
 
- fi
+fi
