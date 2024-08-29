@@ -25,12 +25,22 @@ VALIDATE(){
     then
         echo -e "$2 is...$R FAILED $N" &>>$log_file
         exit 1
-    else
+    elseV
         echo -e "$2 is... $G SUCCESS $N" &>>$log_file
     fi
 }
 
+usage(){
+    echo -e "usage : sudo sh 16-redirectors.sh pack1 pack2 ..."
+    exit 1
+}
+
 CHECK_ROOT
+
+if[] $# -eq 0 ]
+then
+   usage
+fi
 
 # sh 15-loops.sh git mysql postfix nginx
 for package in $@ # $@ refers to all arguments passed to it
@@ -38,10 +48,10 @@ do
     dnf list installed $package
     if [ $? -ne 0 ]
     then
-        echo "$package is not installed, going to install it.."
+        echo "$package is not installed, going to install it.." &>>$log_file
         dnf install $package -y
         VALIDATE $? "Installing $package"
     else
-        echo "$package is already installed..nothing to do"
+        echo -e "$package is already installed..nothing to do" &>>$log_file
     fi
 done
