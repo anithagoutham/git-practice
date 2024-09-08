@@ -35,9 +35,11 @@ usage(){
     exit 1
 }
 
+echo "script started executed at = $(date)"
+
 CHECK_ROOT
 
-if[] $# -eq 0 ]
+if [ $# -eq 0 ]
 then
    usage
 fi
