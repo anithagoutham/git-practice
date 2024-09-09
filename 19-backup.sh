@@ -10,13 +10,13 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-USAGE(){
+usage(){
     echo -e "$R USAGE:: $N sh 19-backup.sh <source> <destination> <days(optional)>"
 }
 #check the source and destination are provided
 
 if [ $# -lt 2 ]
 then
-    USAGE
+    usage
     
 fi
